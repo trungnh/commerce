@@ -2109,3 +2109,6 @@ msgstr ""
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
+
+msgid "Search products…"
+msgstr "Tìm kiếm..."

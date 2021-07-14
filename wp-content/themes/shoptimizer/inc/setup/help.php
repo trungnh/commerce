@@ -15,10 +15,10 @@ class Shoptimizer_Help {
 
 		add_action( 'admin_menu', array( $this, 'shoptimizer_help_register_menu' ) );
 		add_action( 'load-themes.php', array( $this, 'shoptimizer_help_activation_admin_init' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'shoptimizer_help_assets' ) );
+//		add_action( 'admin_enqueue_scripts', array( $this, 'shoptimizer_help_assets' ) );
 
-		add_action( 'shoptimizer_help', array( $this, 'shoptimizer_help_intro' ), 10 );
-		add_action( 'shoptimizer_help', array( $this, 'shoptimizer_help_usefulplugins' ), 20 );
+//		add_action( 'shoptimizer_help', array( $this, 'shoptimizer_help_intro' ), 10 );
+//		add_action( 'shoptimizer_help', array( $this, 'shoptimizer_help_usefulplugins' ), 20 );
 	}
 
 	// End constructor.
@@ -86,7 +86,7 @@ class Shoptimizer_Help {
 		/**
 		 * @hooked shoptimizer_welcome_intro - 10
 		 */
-		do_action( 'shoptimizer_help' );
+		//do_action( 'shoptimizer_help' );
 		?>
 
 
@@ -99,7 +99,7 @@ class Shoptimizer_Help {
 	 * Help - plugin list.
 	 */
 	public function shoptimizer_help_intro() {
-		require_once( get_template_directory() . '/inc/setup/sections/intro.php' );
+		//require_once( get_template_directory() . '/inc/setup/sections/intro.php' );
 	}
 
 	/**

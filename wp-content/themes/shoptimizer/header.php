@@ -25,16 +25,16 @@
 	wp_body_open();
 } ?>
 
-<?php do_action( 'shoptimizer_before' ); ?>
+<?php //do_action( 'shoptimizer_before' ); ?>
 
 <div id="page" class="hfeed site">
 
 	<?php
-	do_action( 'shoptimizer_before_site' );
-	do_action( 'shoptimizer_before_header' );
+//	do_action( 'shoptimizer_before_site' );
+//	do_action( 'shoptimizer_before_header' );
 	?>
 
-	<?php do_action( 'shoptimizer_topbar' ); ?>
+	<?php //do_action( 'shoptimizer_topbar' ); ?>
 
 	<header id="masthead" class="site-header"><h1 hidden itemscope itemtype="http://schema.org/Organization"><?php bloginfo( 'name' ); ?></h1>
 
@@ -58,7 +58,7 @@
 
 	</header><!-- #masthead -->
 
-	
+
 	<div class="col-full-nav">
 
 	<?php
