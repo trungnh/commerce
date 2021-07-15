@@ -24,7 +24,9 @@
 
 	<?php do_action( 'shoptimizer_after_footer' ); ?>
 
-
+	<style>
+		.site-footer .textwidget p img {display: inline-block}
+	</style>
 </div><!-- #page -->
 </div>
 
