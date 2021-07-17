@@ -490,3 +490,39 @@ if ( 'yes' === $shoptimizer_general_speed_critical_css ) {
 // return $html;
 // }
 // add_filter( 'style_loader_tag', 'shoptimizer_elementor_lazy_load_style', 10, 4 );
+
+
+// Display Fields
+add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
+
+function woo_add_custom_general_fields()
+{
+	global $woocommerce, $post;
+
+	echo '<div class="options_group">';
+
+	// Custom fields will be created here...
+	// Text Field
+	woocommerce_wp_text_input(
+		array(
+			'id' => '_landing_checkout',
+			'label' => __('Landing checkout URL', 'woocommerce'),
+			'placeholder' => 'http://',
+			'desc_tip' => 'true',
+			'description' => __('Enter the custom value here.', 'woocommerce')
+		)
+	);
+
+	echo '</div>';
+}
+
+// Save Fields
+add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' );
+function woo_add_custom_general_fields_save( $post_id )
+{
+	// Text Field
+	$woocommerce_text_field = $_POST['_landing_checkout'];
+	if( !empty( $woocommerce_text_field ) )
+		update_post_meta( $post_id, '_landing_checkout', esc_attr( $woocommerce_text_field ) );
+
+}
