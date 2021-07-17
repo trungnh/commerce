@@ -39,7 +39,7 @@ function shoptimizer_woocommerce_upsell_display_args( $args ) {
  */
 
 add_filter( 'woocommerce_product_upsells_products_heading', 'shoptimizer_upsells_title' );
-  
+
 function shoptimizer_upsells_title() {
 
 	$shoptimizer_upsells_title_text = shoptimizer_get_option( 'shoptimizer_upsells_title_text' );
@@ -351,7 +351,7 @@ if ( ! function_exists( 'shoptimizer_product_cat_banner' ) ) {
 			<style>
 			.shoptimizer-category-banner.visible {
 				background-image: url('<?php echo $categorybanner; ?>');
-			}	
+			}
 			</style>
 			<?php endif; ?>
 
@@ -429,7 +429,7 @@ function shoptimizer_gallery_image() {
 		}
 	}
 	?>
-			
+
 	<?php
 }
 
@@ -533,7 +533,7 @@ if ( ! function_exists( 'shoptimizer_cart_link' ) ) {
 		}
 
 		?>
-			
+
 	<div class="cart-click">
 
 		<?php if ( true === $shoptimizer_layout_woocommerce_enable_sidebar_cart ) { ?>
@@ -565,7 +565,7 @@ if ( ! function_exists( 'shoptimizer_cart_link' ) ) {
 
 
 		</a>
-	</div>	
+	</div>
 		<?php
 	}
 }
@@ -580,7 +580,7 @@ if ( ! function_exists( 'shoptimizer_product_search' ) ) {
 	 * @return void
 	 */
 	function shoptimizer_product_search() {
-		
+
 			$shoptimizer_layout_search_display = '';
 			$shoptimizer_layout_search_display = shoptimizer_get_option( 'shoptimizer_layout_search_display' );
 
@@ -589,7 +589,7 @@ if ( ! function_exists( 'shoptimizer_product_search' ) ) {
 			}
 
 			?>
-			
+
 				<?php if ( shoptimizer_is_woocommerce_activated() ) { ?>
 					<?php if ( 'enable' === $shoptimizer_layout_search_display ) { ?>
 						<div class="site-search">
@@ -601,17 +601,17 @@ if ( ! function_exists( 'shoptimizer_product_search' ) ) {
 							<?php echo do_shortcode('[wcas-search-form]'); ?>
 						</div>
 					<?php }
-				} 
+				}
 				?>
 				<?php if ( 'regular' === $shoptimizer_layout_search_display ) { ?>
 					<div class="site-search">
 						<?php get_search_form(); ?>
 					</div>
-				<?php } 
+				<?php }
 				?>
 			<?php
-		
-		
+
+
 	}
 }
 
@@ -638,14 +638,14 @@ if ( ! function_exists( 'shoptimizer_header_cart' ) ) {
 			}
 			?>
 			<?php if ( true === $shoptimizer_layout_woocommerce_display_cart ) { ?>
-		
+
 
 
 
 		<ul class="site-header-cart menu">
 			<li><?php shoptimizer_cart_link(); ?></li>
 		</ul>
-		
+
 		<?php } ?>
 			<?php
 		}
@@ -664,12 +664,12 @@ if ( ! function_exists( 'shoptimizer_sidebar_cart_below_text' ) ) {
 function shoptimizer_sidebar_cart_below_text() {
 	$shoptimizer_cart_below_text = shoptimizer_get_option( 'shoptimizer_cart_below_text' );
 
-		if ($shoptimizer_cart_below_text !== '' ) { 
+		if ($shoptimizer_cart_below_text !== '' ) {
 			echo '<div class="cart-drawer-below">';
 			echo shoptimizer_safe_html( $shoptimizer_cart_below_text );
 			echo '</div>';
 		}
- 
+
 	}
 }
 
@@ -720,7 +720,7 @@ if ( ! function_exists( 'shoptimizer_header_cart_drawer' ) ) {
 				jQuery( document ).ready( function( $ ) {
 					$( 'body' ).on( 'added_to_cart', function( event, fragments, cart_hash ) {
 						$( 'body' ).addClass( 'drawer-open' );
-					} );				
+					} );
 				} );
 				document.addEventListener( 'DOMContentLoaded', function() {
 					document.addEventListener( 'click', function( event ) {
@@ -844,7 +844,7 @@ if ( ! function_exists( 'shoptimizer_product_columns_wrapper_close' ) ) {
 
 
 if ( ! function_exists( 'shoptimizer_shop_remove_pagination' ) ) {
-	
+
 	/**
 	 * Remove Shop Pagination if customizer option is active.
 	 *
@@ -1191,7 +1191,7 @@ function shoptimizer_prev_next_product() {
 
 
 				<?php if ( ! empty( $shoptimizer_prev ) ) : ?>
-				
+
 					<a href="<?php echo esc_url( $shoptimizer_prev->get_permalink() ); ?>">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
   						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15l-3-3m0 0l3-3m-3 3h8M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
@@ -1199,10 +1199,10 @@ function shoptimizer_prev_next_product() {
 					<div class="tooltip">
 						<?php echo shoptimizer_safe_html( $shoptimizer_prev->get_image() ); ?>
 						<span class="title"><?php echo shoptimizer_safe_html( $shoptimizer_prev->get_title() ); ?></span>
-						<span class="price"><?php echo shoptimizer_safe_html( $shoptimizer_prev->get_price_html() ); ?></span>								
+						<span class="price"><?php echo shoptimizer_safe_html( $shoptimizer_prev->get_price_html() ); ?></span>
 					</div>
 					</a>
-				
+
 				<?php endif ?>
 
 				<?php if ( ! empty( $shoptimizer_next ) ) : ?>
@@ -1214,14 +1214,14 @@ function shoptimizer_prev_next_product() {
 					<div class="tooltip">
 						<?php echo shoptimizer_safe_html( $shoptimizer_next->get_image() ); ?>
 						<span class="title"><?php echo shoptimizer_safe_html( $shoptimizer_next->get_title() ); ?></span>
-						<span class="price"><?php echo shoptimizer_safe_html( $shoptimizer_next->get_price_html() ); ?></span>							
+						<span class="price"><?php echo shoptimizer_safe_html( $shoptimizer_next->get_price_html() ); ?></span>
 					</div>
 					</a>
-				
+
 				<?php endif ?>
 
 			</div>
-			
+
 
 			<?php
 		}
@@ -1275,7 +1275,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			event.stopPropagation();
 			event.preventDefault();
 		}
-	} );				
+	} );
 
 	var modal = document.querySelector( '.callback-modal' );
 	var trigger = document.querySelector( '.trigger' );
@@ -1346,7 +1346,7 @@ if ( ! function_exists( 'shoptimizer_search_modal' ) ) {
 			<?php } ?>
 
 		  <div class="search-extras">
-		  <h4 class="search-modal-heading"><?php echo shoptimizer_safe_html( $shoptimizer_layout_search_title ); ?></h4>      			
+		  <h4 class="search-modal-heading"><?php echo shoptimizer_safe_html( $shoptimizer_layout_search_title ); ?></h4>
 
 		  <?php
 			echo shoptimizer_do_shortcode(
@@ -1374,7 +1374,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			event.stopPropagation();
 			event.preventDefault();
 		}
-	} );				
+	} );
 
 	var modal = document.querySelector( '.search-main-modal' );
 	var trigger = document.querySelector( '.search-trigger' );
@@ -1525,7 +1525,7 @@ if ( ! function_exists( 'shoptimizer_masonry_layout' ) ) {
 			$shoptimizer_masonry_layout = '';
 			$shoptimizer_masonry_layout = shoptimizer_get_option( 'shoptimizer_masonry_layout' );
 			?>
-			<?php if ( true === $shoptimizer_masonry_layout ) { ?>	
+			<?php if ( true === $shoptimizer_masonry_layout ) { ?>
 
 				<?php
 					$shoptimizer_masonry_layout_js  = '';
@@ -1541,7 +1541,7 @@ if ( ! function_exists( 'shoptimizer_masonry_layout' ) ) {
 								$('.archive .products').masonry({
 						           itemSelector: '.product',
 						           isAnimated: true
-							}); 							
+							});
 						}
 						} );
 
@@ -1654,7 +1654,7 @@ function shoptimizer_mobile_filters() {
 </svg>';
 		?>
 		<?php esc_html_e( 'Show Filters', 'shoptimizer' ); ?>
-		<?php echo '</a>'; 
+		<?php echo '</a>';
 
 		}
 		?>
@@ -2083,7 +2083,7 @@ function shoptimizer_cross_sells_layout() {
 	$shoptimizer_layout_cross_sells_position = '';
 	$shoptimizer_layout_cross_sells_position = shoptimizer_get_option( 'shoptimizer_layout_cross_sells_position' );
 
-	
+
 	if ( 'after-cart' === $shoptimizer_layout_cross_sells_position ) {
 		add_action( 'woocommerce_after_cart_table', 'woocommerce_cross_sell_display', 25 );
 	}
@@ -2164,7 +2164,7 @@ if ( ! function_exists( 'shoptimizer_sticky_single_add_to_cart' ) ) {
 		$id = $product->get_id();
 
 		?>
-			
+
 			<?php if ( true === $shoptimizer_layout_woocommerce_sticky_cart_display ) { ?>
 
 				<?php if ( $product->is_in_stock() ) { ?>
@@ -2181,8 +2181,8 @@ if ( ! function_exists( 'shoptimizer_sticky_single_add_to_cart' ) ) {
 					function remove_class_on_scroll() {
 					    stickycontainer.classList.remove('visible');
 					}
-				
-					window.addEventListener('scroll', function(){ 
+
+					window.addEventListener('scroll', function(){
 					    scrollpos = window.scrollY;
 
 					    if(scrollpos > 150){
@@ -2207,8 +2207,8 @@ if ( ! function_exists( 'shoptimizer_sticky_single_add_to_cart' ) ) {
 
 				?>
 
-				<?php if ( $product->is_in_stock() ) { ?>
-
+			<?php if ( $product->is_in_stock() ) { ?>
+			<?php $landing_checkout = get_post_meta( $product->get_id(), '_landing_checkout', true ); ?>
 			<section class="shoptimizer-sticky-add-to-cart">
 				<div class="col-full">
 					<div class="shoptimizer-sticky-add-to-cart__content">
@@ -2216,36 +2216,15 @@ if ( ! function_exists( 'shoptimizer_sticky_single_add_to_cart' ) ) {
 						<div class="shoptimizer-sticky-add-to-cart__content-product-info">
 							<span class="shoptimizer-sticky-add-to-cart__content-title"><?php the_title(); ?>
 							<?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
-							
-							</span>	
+
+							</span>
 						</div>
 
 						<div class="shoptimizer-sticky-add-to-cart__content-button">
 							<span class="shoptimizer-sticky-add-to-cart__content-price"><?php echo shoptimizer_safe_html( $product->get_price_html() ); ?></span>
-
-						<?php if ( $product->is_type( 'variable' ) || $product->is_type( 'composite' ) || $product->is_type( 'bundle' ) || $product->is_type( 'grouped' ) ) { ?>
-							<a href="#sticky-scroll" class="variable-grouped-sticky button">
-								<?php echo esc_attr__( 'Select options', 'shoptimizer' ); ?>
+							<a href="<?php echo $landing_checkout; ?>" class="ajax_add_to_cart add_to_cart_button single_add_to_cart_button button">
+								Đặt Hàng
 							</a>
-							
-						<?php } else { ?>
-
-							<?php if ( false === $shoptimizer_layout_woocommerce_single_product_ajax ) { ?>								
-							
-							
-							<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="ajax_add_to_cart add_to_cart_button single_add_to_cart_button button">							
-								<?php echo esc_attr( $product->single_add_to_cart_text() ); ?>
-							</a>
-
-						<?php } else { ?>	
-
-							<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1" 
-								data-product_id="<?php echo shoptimizer_safe_html( $id ); ?>" data-product_sku="" class="add_to_cart_button ajax_add_to_cart button"><?php echo esc_attr( $product->single_add_to_cart_text() ); ?></a>
-
-								<?php
-						}
-						}
-						?>
 						</div>
 					</div>
 				</div>
