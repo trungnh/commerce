@@ -9,6 +9,9 @@ wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 
+wp-content/plugins/woocommerce/i18n/languages/*
+wp-content/languages/plugins/woocommerce-*.json
+
 # ignore these plugins
 wp-content/plugins/hello.php
 
