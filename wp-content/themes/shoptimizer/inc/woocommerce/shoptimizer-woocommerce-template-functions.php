@@ -2207,8 +2207,8 @@ if ( ! function_exists( 'shoptimizer_sticky_single_add_to_cart' ) ) {
 
 				?>
 
-			<?php if ( $product->is_in_stock() ) { ?>
-			<?php $landing_checkout = get_post_meta( $product->get_id(), '_landing_checkout', true ); ?>
+				<?php if ( $product->is_in_stock() ) { ?>
+
 			<section class="shoptimizer-sticky-add-to-cart">
 				<div class="col-full">
 					<div class="shoptimizer-sticky-add-to-cart__content">
@@ -2222,9 +2222,30 @@ if ( ! function_exists( 'shoptimizer_sticky_single_add_to_cart' ) ) {
 
 						<div class="shoptimizer-sticky-add-to-cart__content-button">
 							<span class="shoptimizer-sticky-add-to-cart__content-price"><?php echo shoptimizer_safe_html( $product->get_price_html() ); ?></span>
-							<a href="<?php echo $landing_checkout; ?>" class="ajax_add_to_cart add_to_cart_button single_add_to_cart_button button">
-								Đặt Hàng
+
+						<?php if ( $product->is_type( 'variable' ) || $product->is_type( 'composite' ) || $product->is_type( 'bundle' ) || $product->is_type( 'grouped' ) ) { ?>
+							<a href="#sticky-scroll" class="variable-grouped-sticky button">
+								<?php echo esc_attr__( 'Select options', 'shoptimizer' ); ?>
 							</a>
+
+						<?php } else { ?>
+
+							<?php if ( false === $shoptimizer_layout_woocommerce_single_product_ajax ) { ?>
+
+
+							<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="ajax_add_to_cart add_to_cart_button single_add_to_cart_button button">
+								<?php echo esc_attr( $product->single_add_to_cart_text() ); ?>
+							</a>
+
+						<?php } else { ?>
+
+							<a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" data-quantity="1"
+								data-product_id="<?php echo shoptimizer_safe_html( $id ); ?>" data-product_sku="" class="add_to_cart_button ajax_add_to_cart button"><?php echo esc_attr( $product->single_add_to_cart_text() ); ?></a>
+
+								<?php
+						}
+						}
+						?>
 						</div>
 					</div>
 				</div>
